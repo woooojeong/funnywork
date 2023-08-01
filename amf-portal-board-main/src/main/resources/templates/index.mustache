@@ -1,0 +1,34 @@
+{{>layout/header}}
+    <h1>AMF Board</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/posts/save" role="button" class="btn-primary">Add Post</a>
+            </div>
+        </div>
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thread class="thead-strong">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Modified Date</th>
+                </tr>
+            </thread>
+            <tbody id="tbody">
+            <!-- posts 라는 List를 순회한다 -->
+            {{#posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="posts/update/{{id}}">{{title}}</a></td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
+
+{{>layout/footer}}
